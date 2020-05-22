@@ -17,10 +17,6 @@
       "js": ["./js/content.js"]
     }
   ],
-  "background": {
-    "persistent": false,
-    "scripts": ["background.js"]
-  },
   "web_accessible_resources": ["js/popup.js", "js/content.js"],
   "icons": {
     "128": "./images/128.png"
