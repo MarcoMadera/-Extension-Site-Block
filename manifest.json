@@ -1,0 +1,45 @@
+{
+  "manifest_version": 2,
+  "name": "Bloqueador de url simple",
+  "short_name": "SiteBlock",
+  "description": "Cuando procrastino sin darme cuenta me meto a estos sitios, esto me recordará que debo seguir trabajando.",
+  "author": "Marco Madera <marcomaderaa@gmail.com>",
+  "version": "1.0",
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.facebook.com/*",
+        "*://*.youtube.com/*",
+        "*://*.twitter.com/*",
+        "*://*.lichess.org/*",
+        "*://news.google.com/*"
+      ],
+      "js": ["./js/content.js"]
+    }
+  ],
+  "background": {
+    "persistent": false,
+    "scripts": ["background.js"]
+  },
+  "web_accessible_resources": ["js/popup.js", "js/content.js"],
+  "icons": {
+    "128": "./images/128.png"
+  },
+  "browser_action": {
+    "default_icon": "./images/128.png",
+    "default_popup": "popup.html",
+    "default_title": "Páginas a bloquear"
+  },
+  "permissions": [
+    "tabs",
+    "http://www.facebook.com/",
+    "http://www.youtube.com/",
+    "http://www.twitter.com/",
+    "http://www.lichess.org/",
+    "http://www.news.google.com/"
+  ],
+  "options_ui": {
+    "chrome_style": true,
+    "page": "popup.html"
+  }
+}
